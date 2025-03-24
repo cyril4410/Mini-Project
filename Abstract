@@ -1,0 +1,5 @@
+                                                                    ABSTRACT
+
+Login Page - Doctor Login And Patient Login 
+Patient - Profile, Search Module- [Search Doctor, Search Hospital, Search Department], Treatment History- Doctor(Hospital Name and Qualification), Prescription, Date and Time, Scan History.
+Doctor - Profile, Search Module- Add New Patient(Patient Name,Patient ID)-[ Add Prescription, Add Diagnosis] , Search Existing Patient Details-[ Prescription, Diagnosis ]
