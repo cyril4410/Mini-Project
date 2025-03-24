@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Medical Reports</title>
+</head>
+<body>
+    <h1>Medical Reports</h1>
+    {% if medical_reports %}
+        <ul>
+            {% for report in medical_reports %}
+                <li>{{ report }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No medical reports found.</p>
+    {% endif %}
+</body>
+</html>

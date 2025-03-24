@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Hospital Management System</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .option {
+            width: 48%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .option h2 {
+            margin-top: 0;
+        }
+        .option input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .option button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option button:hover {
+            background-color: #0056b3;
+        }
+        .login-section {
+            margin-top: 40px;
+        }
+        .login-button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .login-button:hover {
+            background-color: #218838;
+        }
+        .login-link {
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .login-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multiple Hospital Management System</h1>
+        <div class="options">
+            <div class="option">
+                <h2>Search by Hospitals</h2>
+                <input type="text" placeholder="Enter hospital name">
+                <button>Search</button>
+            </div>
+            <div class="option">
+                <h2>Search by Doctor</h2>
+                <input type="text" placeholder="Enter doctor name">
+                <button>Search</button>
+            </div>
+            <div class="section login-section">
+                <h2>Login</h2>
+                <a href="/login" class="login-button">Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

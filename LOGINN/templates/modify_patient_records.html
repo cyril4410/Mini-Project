@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Patient Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        select, input[type="text"], button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .patient-list {
+            text-align: center;
+        }
+        .patient-button {
+            display: block;
+            margin: 0 auto 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            width: 200px;
+            transition: background-color 0.3s;
+        }
+        .patient-button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Modify Patient Records</h1>
+
+        <form method="POST" action="{{ url_for('modify_patient_records') }}">
+            <select name="search_type">
+                <option value="patient_id">Patient ID</option>
+                <option value="patient_name">Patient Name</option>
+            </select>
+            <input type="text" name="search_query" placeholder="Search query">
+            <button type="submit">Search</button>
+        </form>
+
+        <h2>All Patients</h2>
+        <div class="patient-list">
+            {% for patient in patients %}
+                <a href="{{ url_for('modify_view', patient_id=patient.patient_id) }}" class="patient-button">{{ patient.patient_name }}</a>
+            {% endfor %}
+        </div>
+
+        {% if search_result %}
+            <h2>Search Result</h2>
+            <div>
+                <a href="{{ url_for('modify_view', patient_id=search_result.patient_id) }}" class="patient-button">{{ search_result.patient_name }}</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

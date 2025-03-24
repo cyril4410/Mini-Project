@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Medical History</title>
+</head>
+<body>
+    <h1>Medical History</h1>
+    <h2>Patient Details:</h2>
+    <p>Name: {{ patient_details.name }}</p>
+    <p>Age: {{ patient_details.age }}</p>
+    <p>Gender: {{ patient_details.gender }}</p>
+    
+    <h2>Scan Reports:</h2>
+    <ul>
+        {% for report in scan_reports %}
+            <li>{{ report }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Diagnosed Diseases:</h2>
+    <ul>
+        {% for disease in diagnosed_diseases %}
+            <li>{{ disease }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Allergies:</h2>
+    <ul>
+        {% for allergy in allergies %}
+            <li>{{ allergy }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

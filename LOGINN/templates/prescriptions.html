@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescriptions</title>
+</head>
+<body>
+    <h1>Prescriptions</h1>
+    <ul>
+        {% for prescription in prescriptions %}
+        <li>
+            <h2>Prescription ID: {{ prescription.prescription_id }}</h2>
+            <p>Doctor: {{ prescription.doctor_name }}</p>
+            <p>Date Added: {{ prescription.date_added }}</p>
+            <p>Diagnosed Disease: {{ prescription.diagnosed_disease }}</p>
+            <h3>Medications:</h3>
+            <ul>
+                {% for medication in prescription.medications %}
+                <li>
+                    <p>Medication: {{ medication.medication }}</p>
+                    <p>Dosage: {{ medication.dosage }}</p>
+                    <p>Frequency: {{ medication.frequency }}</p>
+                    <p>Period: {{ medication.period }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

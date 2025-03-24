@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Hospital Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        section {
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .hospital-card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 20px;
+            padding: 20px;
+        }
+        .hospital-card h3 {
+            margin-top: 0;
+        }
+        .hospital-card p {
+            margin-bottom: 0;
+        }
+        .homepage-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .homepage-links a {
+            display: block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #444;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .homepage-links a:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Multi-Hospital Management System</h1>
+    </header>
+    <nav>
+        <a href="#hospitals">Hospitals</a>
+        <a href="#patients">Patients</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#appointments">Appointments</a>
+    </nav>
+    <section id="homepage">
+        <div class="container">
+            <h2>Welcome to the Multi-Hospital Management System</h2>
+            <p>This system allows you to manage hospitals, patients, doctors, and appointments efficiently.</p>
+            <div class="homepage-links">
+                <a href="viewhospitals.html">View Hospitals</a>
+                <a href="#patients">View Patients</a>
+                <a href="#doctors">View Doctors</a>
+                <a href="#appointments">View Appointments</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

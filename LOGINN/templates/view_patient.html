@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Patients</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        select, input[type="text"], button {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        .patient-button {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .patient-button:hover {
+            
+            background-color: #f0f0f0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>View Patients</h1>
+
+    <form method="POST" action="{{ url_for('view_patients') }}">
+        <select name="search_type">
+            <option value="patient_id">Patient ID</option>
+            <option value="patient_name">Patient Name</option>
+        </select>
+        <input type="text" name="search_query" placeholder="Search query">
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>All Patients</h2>
+    <div>
+        {% for patient in patients %}
+            <a href="{{ url_for('patient_details', patient_id=patient.patient_id) }}" class="patient-button">{{ patient.patient_name }}</a>
+        {% endfor %}
+    </div>
+
+    {% if search_result %}
+        <h2>Search Result</h2>
+        <div>
+            <a href="{{ url_for('patient_details', patient_id=search_result.patient_id) }}" class="patient-button">{{ search_result.patient_name }}</a>
+        </div>
+    {% endif %}
+</body>
+</html>
